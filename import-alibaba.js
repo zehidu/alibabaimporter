@@ -87,8 +87,7 @@ const extractFromPage = async (page) => {
 
 const main = async () => {
   const args = process.argv.slice(2);
-  let url = args[0];
-  if (!url) url = await prompt('Alibaba product URL: ');
+  const url = await prompt('Alibaba product URL: ');
 
   const apiBase = getArg(args, '--api', await prompt('API base (e.g. https://therenewup.com/api): '));
   const token = getArg(args, '--token', await prompt('Admin access token: '));
