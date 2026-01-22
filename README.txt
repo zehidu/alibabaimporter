@@ -10,12 +10,24 @@ Quick start:
 3) Export your Alibaba cookies to JSON (e.g. alibaba-cookies.json).
 4) Get your admin access token from localStorage in your admin dashboard.
 
-Run:
-  node import-alibaba.js "<ALIBABA_URL>" --api https://therenewup.com/api --token YOUR_TOKEN --cookies ./alibaba-cookies.json --category 1 --price 29.99 --wholesale 19.99
+Windows (one-click):
+- Double-click run-importer.bat
+
+Mac (one-click):
+- Double-click run-importer.command
+- If blocked, run: chmod +x run-importer.command
+
+The script will prompt for:
+- Alibaba URL
+- API base (e.g. https://therenewup.com/api)
+- Admin access token
+- Cookies JSON path
+- Category ID (optional)
+- Price / Wholesale (optional)
 
 If captcha appears:
-  node import-alibaba.js "<ALIBABA_URL>" --headed --api https://therenewup.com/api --token YOUR_TOKEN --cookies ./alibaba-cookies.json
+- Close the script and run: node import-alibaba.js --headed
 
 Notes:
-- If price is not detected, pass --price and --wholesale.
+- If price is not detected, provide price and wholesale.
 - Images are pulled from the page and attached to the product.
