@@ -1,0 +1,12 @@
+{
+  "name": "alibaba-importer",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "node import-alibaba.js"
+  },
+  "dependencies": {
+    "playwright": "^1.55.0"
+  }
+}
