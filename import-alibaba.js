@@ -114,6 +114,11 @@ const main = async () => {
   await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 45000 });
   await page.waitForTimeout(2000);
 
+  if (headed) {
+    await prompt('If a captcha appears, solve it in the browser, then press Enter here to continue...');
+    await page.waitForTimeout(1000);
+  }
+
   const data = await extractFromPage(page);
 
   await page.close();
@@ -121,7 +126,7 @@ const main = async () => {
   await browser.close();
 
   if (!data.title || data.title.toLowerCase().includes('captcha')) {
-    throw new Error('Captcha detected. Re-run with --headed and solve it.');
+    throw new Error('Captcha detected. Please re-run with --headed and solve it before pressing Enter.');
   }
 
   const priceDetected = parsePrice(data.priceText);
